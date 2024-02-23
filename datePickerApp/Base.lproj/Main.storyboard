@@ -1,24 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="datePickerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsi-Ob-smz">
+                                <rect key="frame" x="159" y="162" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="getCurDateTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jFf-c8-fIb"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="XlD-qe-g8A">
+                                <rect key="frame" x="42" y="81" width="308" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="UCm-dg-Rg2"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="dateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="FxE-2d-yVh"/>
+                                </connections>
+                            </datePicker>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nym-W5-tVA">
+                                <rect key="frame" x="0.0" y="329" width="393" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="JwV-NX-c9G"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqW-dY-E4E">
+                                <rect key="frame" x="167" y="592" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="btnTapped2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hoe-Ow-wSe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aqW-dY-E4E" firstAttribute="top" secondItem="nym-W5-tVA" secondAttribute="bottom" constant="36" id="DkH-T3-IjJ"/>
+                            <constraint firstItem="nsi-Ob-smz" firstAttribute="centerX" secondItem="XlD-qe-g8A" secondAttribute="centerX" id="HoH-OS-E3d"/>
+                            <constraint firstAttribute="bottom" secondItem="nym-W5-tVA" secondAttribute="bottom" constant="194" id="MAR-jc-Jak"/>
+                            <constraint firstItem="nsi-Ob-smz" firstAttribute="top" secondItem="XlD-qe-g8A" secondAttribute="bottom" constant="76" id="Muu-1G-e4M"/>
+                            <constraint firstItem="XlD-qe-g8A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="116" id="dUi-wh-vZx"/>
+                            <constraint firstItem="XlD-qe-g8A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="k8d-X8-2Fa"/>
+                            <constraint firstItem="XlD-qe-g8A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l4M-Yt-vOp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myDatePicker" destination="XlD-qe-g8A" id="0rU-RU-j42"/>
+                        <outlet property="myPicker2" destination="nym-W5-tVA" id="NeG-5N-y3S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="17.557251908396946" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
